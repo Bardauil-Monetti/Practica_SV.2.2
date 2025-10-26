@@ -51,7 +51,7 @@ void handleRootRequest(AsyncWebServerRequest *request) {
     String pagina = pagina_template; //hago una variable para no modificar a la original
     //parte para cambiar lo que dice el boton una vez que se prende o apaga
     lightlvl = analogRead(ldr);
-    int lightP = (lightlvl * 100) / 1023;
+    int lightP = (lightlvl/1023) * 100;
     String colorFondo;
     if(lightlvl <= 341){
       colorFondo = "#2c3e50";
